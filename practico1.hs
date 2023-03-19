@@ -46,3 +46,27 @@ absoluto numero = if numero < 0 then (-numero) else numero
 esMultiplo2 :: Int -> Bool
 esMultiplo2 numero = numero `mod` 2 == 0
 
+-- 19)
+esMultiploDe :: Int -> Int -> Bool
+esMultiploDe multiplo numero = numero `mod` multiplo == 0
+
+-- 20)
+esBisiesto :: Int -> Bool
+esBisiesto anio = anio `mod` 400 == 0 || (anio `mod` 4 == 0 && not (anio `mod` 100 == 0))
+
+-- 21)
+dispersion :: Int -> Int -> Int -> Int
+dispersion primero segundo tercero = if primero > segundo then ((primero `max` tercero) - (tercero `min` segundo)) else (segundo `max` tercero) - (primero `min` tercero)
+
+-- 22)
+celsiusToFahr :: Fractional a => a -> a
+celsiusToFahr celsius = celsius * 1.8 + 32
+
+-- 23)
+fahrToCelsius :: Fractional a => a -> a
+fahrToCelsius fahr = (fahr - 32) / 1.8
+
+-- 24)
+haceFrioF :: Int -> Bool 
+haceFrioF grados = grados < 8
+
