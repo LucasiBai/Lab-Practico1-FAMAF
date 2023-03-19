@@ -15,3 +15,16 @@ por2 y = 2*y
 multiplicar :: Int -> Int -> Int
 multiplicar zz tt = zz*tt
 
+-- 17)
+g :: Int -> Int
+g y = 8 * y
+
+h :: Int -> Int -> Int
+h z w = z + w
+
+j :: Int -> Bool
+j x = x <= 0
+
+
+
+
