@@ -70,3 +70,21 @@ fahrToCelsius fahr = (fahr - 32) / 1.8
 haceFrioF :: Int -> Bool 
 haceFrioF grados = grados < 8
 
+-- 25)
+segundo3 :: (Int, Int, Int) -> Int
+segundo3 (primero, segundo, tercero) = segundo
+
+ordena :: (Int, Int) -> (Int, Int)
+ordena (primero, segundo) = if primero > segundo then (segundo, primero) else (primero, segundo)
+
+rangoPrecioParametrizado :: Int -> (Int, Int) -> String
+rangoPrecioParametrizado precio (menor, mayor)  | precio < 0 = "esto no puede ser!"
+                                                | menor <= precio && precio <= mayor = "hay que verlo bien"
+                                                | precio < menor = "muy barato"
+                                                | precio > mayor = "muy caro"
+                                                
+mayor3 :: (Int, Int, Int) -> (Bool, Bool, Bool)
+mayor3 (primero, segundo, tercero) = (primero > 3,segundo > 3, tercero > 3)
+
+todosIguales :: (Int, Int, Int) -> Bool
+todosIguales (primero, segundo, tercero) = primero == segundo && segundo == tercero
