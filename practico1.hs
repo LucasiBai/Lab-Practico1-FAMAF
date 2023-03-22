@@ -29,7 +29,7 @@ j x = x <= 0
 signo :: Int -> Int
 signo x | x > 0 = 1
         | x < 0 = -1
-        | x == 0 = 0
+        | otherwise = 0
 
 entre0y9 :: Int -> Bool
 entre0y9 x = 0<=x && x<=9
@@ -37,10 +37,11 @@ entre0y9 x = 0<=x && x<=9
 rangoPrecio :: Int -> String
 rangoPrecio precio | precio < 2000 = "muy barato"
                    | precio > 5000 = "demasiado caro"
-                   | 2000 <= precio && precio <= 5000 = "hay que verlo bien"
+                   | otherwise = "hay que verlo bien"
 
 absoluto :: Int -> Int
-absoluto numero = if numero < 0 then (-numero) else numero
+absoluto numero | numero < 0 = (-numero)  
+                | otherwise = numero
 
 
 esMultiplo2 :: Int -> Bool
@@ -56,7 +57,8 @@ esBisiesto anio = anio `mod` 400 == 0 || (anio `mod` 4 == 0 && not (anio `mod` 1
 
 -- 21)
 dispersion :: Int -> Int -> Int -> Int
-dispersion primero segundo tercero = if primero > segundo then ((primero `max` tercero) - (tercero `min` segundo)) else (segundo `max` tercero) - (primero `min` tercero)
+dispersion primero segundo tercero  | (max primero segundo) == primero = (max primero tercero) - (min segundo tercero)
+                                    | otherwise = (max segundo tercero) - (min primero tercero) 
 
 -- 22)
 celsiusToFahr :: Fractional a => a -> a
